@@ -1,6 +1,6 @@
 # 肥鱼证 · Feiyu Certificate
 
-**在线使用：** <https://friade.github.io/-/>
+**在线使用：** <https://friade.github.io/feiyu-cert/>
 
 给养大肥鱼的人一张正式的、可以长期留着的身份证明。  
 填上名字、照片和鱼图，盖下「鱼印」，导出高清 PNG。
