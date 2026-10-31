@@ -45,8 +45,8 @@ feiyu-cert/
 ├─ LICENSE-ASSETS.md         占位图 / 模板 / 字体许可说明
 ├─ .nojekyll                  GitHub Pages 跳过 Jekyll
 ├─ assets/
-│  ├─ portrait-placeholder.svg  照片占位（原创小蓝发）
-│  ├─ fish-placeholder.svg      鱼图占位（原创深蓝大鱼）
+│  ├─ portrait-placeholder.svg  照片占位（大肥鱼画的）
+│  ├─ fish-placeholder.svg      鱼图占位（也是大肥鱼画的）
 │  ├─ favicon.svg
 │  ├─ screenshot.png
 │  └─ fonts/
