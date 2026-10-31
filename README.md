@@ -1,5 +1,7 @@
 # 肥鱼证 · Feiyu Certificate
 
+**在线使用：** <https://friade.github.io/-/>
+
 给养大肥鱼的人一张正式的、可以长期留着的身份证明。  
 填上名字、照片和鱼图，盖下「鱼印」，导出高清 PNG。
 
@@ -31,34 +33,6 @@
 - 导出：2000 × 2800 高清 PNG，按当前排版、颜色、图片和印章生成。
 - 放大预览：手机上点「放大预览」全屏看证书，Esc 退出。
 - 草稿：保存文字、颜色、字号、比例、标签和图片位置到 localStorage；图片本身不保存（刷新后回占位图）。
-
-## 本地运行
-
-不需要构建，也没有依赖。
-
-```bash
-python -m http.server 8765 --bind 127.0.0.1 --directory .
-```
-
-打开 <http://127.0.0.1:8765/>。
-
-也可以直接双击 `index.html`。用本地服务器更稳，字体加载和导出下载都更接近线上环境。
-
-## 部署到 GitHub Pages
-
-目标仓库：<https://github.com/Friade/->。
-
-需要一个有 `Contents` 和 `Pages` 写权限的 token（classic PAT 的 `repo` 也可以）。把 token 放进项目根目录的 `github-token.txt`（可见文件，已 gitignore）或 `.github-token`，或设置环境变量 `GITHUB_TOKEN`，然后：
-
-```bash
-node tools/deploy-github-pages.mjs --dry-run
-node tools/deploy-github-pages.mjs
-```
-
-脚本会通过 GitHub Git Data API 创建首个提交、启用 Pages，并轮询构建状态。  
-预计地址：<https://friade.github.io/-/>。
-
-> 不要把 token 提交到仓库，也不要把 token 贴进公开 issue。
 
 ## 文件
 
@@ -109,36 +83,7 @@ feiyu-cert/
 
 图片比例会保持宽高比；当高度超过 360px 时自动收窄宽度，避免压到发证和署名区。
 
-## 路线图
+字体使用 `Ma Shan Zheng` 与 `ZCOOL XiaoWei`，来自 Google Fonts，均为 SIL Open Font License 1.1。OFL 全文已放在 `assets/fonts/`：
 
-- [x] 1:1 版式原型
-- [x] 开源字体 + 自定义颜色 / 字号
-- [x] 图片上传、拖拽、缩放、显隐、比例
-- [x] 图片标签开关 / 自定义文字
-- [x] 主人 / 大肥鱼署名，支持左右排版、独立字体颜色
-- [x] 盖章动画与音效
-- [x] 高清 PNG 导出
-- [x] GitHub Pages 部署与开源仓库（准备中）
-- [ ] 鱼缸档案（多张证、本地列表）
-- [ ] 图片持久化（IndexedDB，刷新不丢）
-- [ ] 二维码 / 分享页（静态托管需要额外方案）
-- [ ] A5 PDF 导出
-- [ ] 自定义字体上传
-- [ ] 字体子集化，减小 12 MB 字体体积
-
-## 版权、字体与许可证
-
-- 版式灵感来自上述 B 站视频；**没有**打包视频里的角色图。两张占位图是本项目原创的 SVG。
-- 如果公开做「1:1 复刻」，建议先和 UP 打个招呼；同人项目也请保留出处和视频链接。
-- `Ma Shan Zheng` 与 `ZCOOL XiaoWei` 来自 Google Fonts，均为 SIL Open Font License 1.1。OFL 全文已放在 `assets/fonts/`：
-  - `OFL-MaShanZheng.txt`
-  - `OFL-ZCOOLXiaoWei.txt`
-- 代码许可证待定。建议代码用 MIT；占位插画和证书模板可另用 CC BY-NC-SA，避免被直接商用。正式开源前再定。
-
-## 已知问题
-
-- 两套中文字体合计约 12 MB，首次加载偏慢；后续做子集化或按需加载。
-- 图片只存在当前页面，刷新后回占位图；保存草稿不包含图片。
-- PNG 导出用 Canvas 重绘，纸张噪点和印章毛边是近似效果，不会和屏幕像素完全一致。
-- 鱼缸档案、二维码、PDF、自定义字体上传还没接。
-- 目前按桌面和 430 × 900 手机视口调过；更宽的平板 / 折叠屏还需要再测。
+- `OFL-MaShanZheng.txt`
+- `OFL-ZCOOLXiaoWei.txt`
