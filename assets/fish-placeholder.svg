@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="深蓝色大鱼与小鱼占位图">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#223756"/>
+      <stop offset="1" stop-color="#101c31"/>
+    </linearGradient>
+    <linearGradient id="fish" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9bbcF2"/>
+      <stop offset="1" stop-color="#6d8dd4"/>
+    </linearGradient>
+    <linearGradient id="smallFish" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7287ab"/>
+      <stop offset="1" stop-color="#52657f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#water)"/>
+
+  <!-- 远处的气泡与星点 -->
+  <g fill="#ffffff" opacity=".7">
+    <circle cx="92" cy="120" r="3"/>
+    <circle cx="164" cy="82" r="2"/>
+    <circle cx="256" cy="110" r="2.5"/>
+    <circle cx="700" cy="100" r="3"/>
+    <circle cx="742" cy="180" r="2"/>
+    <circle cx="620" cy="82" r="2"/>
+    <circle cx="110" cy="500" r="2.5"/>
+    <circle cx="742" cy="520" r="2"/>
+  </g>
+
+  <!-- 大鱼 -->
+  <g>
+    <ellipse cx="390" cy="330" rx="188" ry="114" fill="url(#fish)"/>
+    <path d="M556 322 L684 250 L662 330 L702 414 L566 382 Z" fill="#6c8bd0"/>
+    <path d="M330 232 Q390 172 458 232 Q400 252 330 232 Z" fill="#a9c6f4"/>
+    <ellipse cx="378" cy="372" rx="148" ry="52" fill="#aec9f4" opacity=".55"/>
+    <path d="M240 300 Q218 276 210 300" fill="none" stroke="#5d79b8" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+    <path d="M266 310 Q248 330 258 352" fill="none" stroke="#5d79b8" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+    <circle cx="306" cy="300" r="34" fill="#ffffff"/>
+    <circle cx="316" cy="302" r="15" fill="#15213b"/>
+    <circle cx="322" cy="296" r="5" fill="#ffffff"/>
+    <path d="M226 348 Q246 362 270 352" fill="none" stroke="#5d79b8" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+    <g fill="none" stroke="#8fade2" stroke-width="3" opacity=".4">
+      <path d="M360 270 Q380 288 360 306"/>
+      <path d="M410 258 Q430 278 410 298"/>
+      <path d="M460 268 Q480 288 460 308"/>
+    </g>
+  </g>
+
+  <!-- 小鱼 -->
+  <g>
+    <ellipse cx="618" cy="470" rx="55" ry="32" fill="url(#smallFish)"/>
+    <path d="M568 465 L516 440 L528 474 L508 506 L566 490 Z" fill="#52657f"/>
+    <path d="M618 440 Q646 424 664 442 Q642 450 618 440 Z" fill="#7287ab"/>
+    <circle cx="650" cy="462" r="8" fill="#ffffff"/>
+    <circle cx="652" cy="462" r="3.5" fill="#15213b"/>
+    <path d="M628 488 Q640 494 652 488" fill="none" stroke="#3f4f66" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- 水泡 -->
+  <g fill="none" stroke="#a9c2ee" stroke-width="2" opacity=".55">
+    <circle cx="532" cy="190" r="9"/>
+    <circle cx="558" cy="158" r="6"/>
+    <circle cx="574" cy="130" r="4"/>
+    <circle cx="206" cy="180" r="5"/>
+    <circle cx="188" cy="150" r="3"/>
+  </g>
+</svg>

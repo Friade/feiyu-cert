@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ded9d2">
+  <title>肥鱼证 · 给大肥鱼一张正式身份证</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <main class="stage-wrap">
+      <div class="stage-area" id="stageArea">
+        <div class="stage" id="stage">
+          <div class="cert-scaler" id="certScaler">
+            <article class="cert" id="cert" aria-label="肥鱼证预览">
+              <div class="cert-border outer"></div>
+              <div class="cert-border inner"></div>
+
+              <div class="cert-number">编号 <span id="numberView">No. 0001</span></div>
+
+              <h1 class="cert-title" id="titleView">
+                <span>肥</span><span>鱼</span><span>证</span>
+              </h1>
+              <div class="title-rule"></div>
+
+              <div class="cert-body" id="bodyView">
+                <div class="cert-line"><span>兹</span><span>证</span><span>明</span></div>
+                <div class="cert-line"><span>本</span><span>鱼</span></div>
+                <div class="cert-line"><span>已</span><span>有</span><span>主</span><span>人</span></div>
+                <div class="cert-line"><span>图</span><span>片</span><span>为</span><span>证</span></div>
+              </div>
+
+              <section class="module photo-module" id="photoModule" data-x="74" data-y="640" tabindex="0" aria-label="照片模块，可拖动">
+                <div class="photo-frame">
+                  <img id="portraitImg" src="assets/portrait-placeholder.svg" alt="照片">
+                </div>
+                <div class="module-label" id="photoLabel">照片</div>
+              </section>
+
+              <section class="module fish-module" id="fishModule" data-x="500" data-y="645" tabindex="0" aria-label="附图模块，可拖动">
+                <div class="fish-frame">
+                  <img id="fishImg" src="assets/fish-placeholder.svg" alt="附图">
+                </div>
+                <div class="module-label" id="fishLabel">附图</div>
+              </section>
+
+              <div class="issuer-block">
+                <div><span class="issuer-label">发证：</span><span id="issuerView">肥鱼事务所</span></div>
+                <div><span class="issuer-label">日期：</span><span id="dateView">2026 年 11 月</span></div>
+              </div>
+
+              <div class="sign-block" id="signBlock">
+                <div><span class="sign-label">主人：</span><span id="ownerView">________</span></div>
+                <div><span class="sign-label">大肥鱼：</span><span id="fishNameView">________</span></div>
+              </div>
+
+              <div class="seal stamped" id="seal" aria-label="鱼印">
+                <span class="seal-text" id="sealText"><span>鱼</span><span>印</span></span>
+              </div>
+
+              <div class="cert-footer" id="footerView">本证永久有效，遗失不补</div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage-toolbar">
+        <span class="stage-hint">拖动「照片 / 附图」可换位置 · 方向键微调</span>
+        <div class="stage-actions">
+          <button class="tool-btn" id="previewBtn" type="button" aria-pressed="false">放大预览</button>
+          <button class="tool-btn" id="centerBtn" type="button">复位排版</button>
+        </div>
+      </div>
+    </main>
+
+    <aside class="panel">
+      <header class="panel-head">
+        <div class="brand">
+          <span class="brand-mark">鱼</span>
+          <div>
+            <h2>肥鱼证</h2>
+            <p>给自家大肥鱼办一张正式身份证</p>
+          </div>
+        </div>
+        <span class="badge">v0.2</span>
+      </header>
+
+      <div class="panel-scroll">
+        <section class="group">
+          <h3>证书文字</h3>
+          <label>标题
+            <input id="titleInput" type="text" maxlength="6" value="肥鱼证">
+          </label>
+          <label>编号
+            <input id="numberInput" type="text" maxlength="16" value="No. 0001">
+          </label>
+          <label>正文（每行一句）
+            <textarea id="bodyInput" rows="5">兹证明
+本鱼
+已有主人
+图片为证</textarea>
+          </label>
+          <div class="row">
+            <label>发证
+              <input id="issuerInput" type="text" maxlength="12" value="肥鱼事务所">
+            </label>
+            <label>日期
+              <input id="dateInput" type="text" maxlength="20" value="2026 年 11 月">
+            </label>
+          </div>
+          <div class="row">
+            <label>主人
+              <input id="ownerInput" type="text" maxlength="8" placeholder="写上主人名字">
+            </label>
+            <label>大肥鱼
+              <input id="fishNameInput" type="text" maxlength="8" placeholder="写上大肥鱼名字">
+            </label>
+          </div>
+          <div class="row">
+            <label>署名位置
+              <select id="signLayout">
+                <option value="below">发证/日期下方</option>
+                <option value="left">发证/日期左侧</option>
+              </select>
+            </label>
+            <label>署名字体
+              <select id="signFont">
+                <option value="'STSong','SimSun',serif">系统宋体</option>
+                <option value="'KaiTi','STKaiti',serif">楷体</option>
+                <option value="'ZCOOL XiaoWei','STSong','SimSun',serif">小薇宋</option>
+                <option value="'Microsoft YaHei','PingFang SC',sans-serif">黑体</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label>署名颜色
+              <input id="signColor" type="color" value="#6f6256">
+            </label>
+            <label class="switch-row"><input id="signToggle" type="checkbox" checked> 显示署名</label>
+          </div>
+          <label>底部小字
+            <input id="footerInput" type="text" maxlength="28" value="本证永久有效，遗失不补">
+          </label>
+        </section>
+
+        <section class="group">
+          <h3>字体与颜色</h3>
+          <div class="row">
+            <label>标题字体
+              <select id="titleFont">
+                <option value="'Ma Shan Zheng','STXingkai','KaiTi','STKaiti',serif">毛笔行楷</option>
+                <option value="'STXingkai','KaiTi','STKaiti',serif">系统行楷</option>
+                <option value="'KaiTi','STKaiti',serif">楷体</option>
+                <option value="'STSong','SimSun',serif">宋体</option>
+                <option value="'Microsoft YaHei','PingFang SC',sans-serif">黑体</option>
+              </select>
+            </label>
+            <label>正文字体
+              <select id="bodyFont">
+                <option value="'ZCOOL XiaoWei','STSong','SimSun',serif">小薇宋</option>
+                <option value="'STSong','SimSun',serif">系统宋体</option>
+                <option value="'KaiTi','STKaiti',serif">楷体</option>
+                <option value="'Microsoft YaHei','PingFang SC',sans-serif">黑体</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label>标题颜色
+              <input id="titleColor" type="color" value="#5b6798">
+            </label>
+            <label>正文颜色
+              <input id="bodyColor" type="color" value="#6b6570">
+            </label>
+          </div>
+          <div class="row">
+            <label>纸张颜色
+              <input id="paperColor" type="color" value="#f8ecdd">
+            </label>
+            <label>印章颜色
+              <input id="sealColor" type="color" value="#c8453a">
+            </label>
+          </div>
+          <label class="range-label">
+            <span>标题字号</span>
+            <input id="titleSize" type="range" min="80" max="140" value="112">
+            <span id="titleSizeView">112</span>
+          </label>
+          <label class="range-label">
+            <span>正文字号</span>
+            <input id="bodySize" type="range" min="34" max="58" value="46">
+            <span id="bodySizeView">46</span>
+          </label>
+        </section>
+
+        <section class="group">
+          <h3>照片 / 附图</h3>
+          <div class="upload-row">
+            <label class="upload-btn">上传照片
+              <input id="portraitFile" type="file" accept="image/*">
+            </label>
+            <label class="upload-btn">上传鱼图
+              <input id="fishFile" type="file" accept="image/*">
+            </label>
+          </div>
+          <p class="hint warn">图片只存在当前页面，刷新后会恢复占位图；要长期保存，请先「导出 PNG」。</p>
+
+          <div class="row">
+            <label>照片比例
+              <select id="photoRatio">
+                <option value="1 / 1" selected>1:1（方形）</option>
+                <option value="4 / 3">4:3（横向）</option>
+                <option value="3 / 4">3:4（竖向）</option>
+                <option value="1 / 1.5">1:1.5（竖长）</option>
+                <option value="1.5 / 1">1.5:1（横长）</option>
+                <option value="1 / 2">1:2（长竖）</option>
+                <option value="2 / 1">2:1（长横）</option>
+              </select>
+            </label>
+            <label>附图比例
+              <select id="fishRatio">
+                <option value="1 / 1">1:1（方形）</option>
+                <option value="4 / 3" selected>4:3（横向）</option>
+                <option value="3 / 4">3:4（竖向）</option>
+                <option value="1 / 1.5">1:1.5（竖长）</option>
+                <option value="1.5 / 1">1.5:1（横长）</option>
+                <option value="1 / 2">1:2（长竖）</option>
+                <option value="2 / 1">2:1（长横）</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>照片标签
+              <input id="photoLabelInput" type="text" maxlength="8" value="照片">
+            </label>
+            <label>附图标签
+              <input id="fishLabelInput" type="text" maxlength="8" value="附图">
+            </label>
+          </div>
+          <div class="row">
+            <label class="switch-row"><input id="photoLabelToggle" type="checkbox" checked> 显示照片标签</label>
+            <label class="switch-row"><input id="fishLabelToggle" type="checkbox" checked> 显示附图标签</label>
+          </div>
+
+          <div class="row">
+            <label class="switch-row"><input id="photoToggle" type="checkbox" checked> 显示照片位</label>
+            <label class="switch-row"><input id="fishToggle" type="checkbox" checked> 显示附图位</label>
+          </div>
+          <label class="range-label">
+            <span>照片缩放</span>
+            <input id="photoScale" type="range" min="60" max="160" value="100">
+            <span id="photoScaleView">100%</span>
+          </label>
+          <label class="range-label">
+            <span>鱼图缩放</span>
+            <input id="fishScale" type="range" min="60" max="160" value="100">
+            <span id="fishScaleView">100%</span>
+          </label>
+          <p class="hint">拖动图片模块可自由摆放；方向键微调，Shift + 方向键加速。比例改变后，标签会跟着图框移动。</p>
+        </section>
+
+        <section class="group">
+          <h3>鱼印</h3>
+          <label>印章文字（1–4 字）
+            <input id="sealInput" type="text" maxlength="4" value="鱼印">
+          </label>
+          <div class="row">
+            <label class="switch-row"><input id="soundToggle" type="checkbox"> 盖章音效</label>
+            <button class="ghost" id="stampBtn" type="button">盖章发证</button>
+          </div>
+          <p class="hint">点「盖章发证」会重播右下角鱼印落下的动画。</p>
+        </section>
+
+        <section class="group">
+          <h3>保存与导出</h3>
+          <div class="row">
+            <button class="primary" id="saveBtn" type="button">保存草稿</button>
+            <button class="ghost" id="resetBtn" type="button">恢复默认</button>
+          </div>
+          <button class="ghost wide" id="exportBtn" type="button">导出 PNG（高清）</button>
+          <p class="hint">导出为 2000 × 2800 PNG；照片和附图都只在本机处理，不会上传。鱼缸档案和二维码在下一版接上。</p>
+        </section>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="seal-rough" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="8" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <script src="app.js"></script>
+</body>
+</html>

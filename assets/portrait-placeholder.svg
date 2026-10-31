@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="90 40 420 420" role="img" aria-label="蓝发少女头像占位图">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4fb"/>
+      <stop offset="1" stop-color="#d7e2f1"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6079bd"/>
+      <stop offset="1" stop-color="#3d5496"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbe3d1"/>
+      <stop offset="1" stop-color="#f2cbb6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <circle cx="300" cy="300" r="230" fill="#ffffff" opacity=".28"/>
+
+  <!-- 后发 -->
+  <path d="M112 270 C112 130 210 58 300 58 C390 58 488 130 488 270 L505 438 C470 485 405 490 382 440 L372 340 L228 340 L218 440 C195 490 130 485 95 438 Z" fill="url(#hair)"/>
+
+  <!-- 身体与领口 -->
+  <path d="M142 530 C162 432 225 388 300 388 C375 388 438 432 458 530 Z" fill="#2e3e68"/>
+  <path d="M218 400 L300 472 L382 400 L362 530 L238 530 Z" fill="#e4ebf7"/>
+  <path d="M270 420 L300 450 L330 420 L318 490 L282 490 Z" fill="#b9c9e8"/>
+  <circle cx="300" cy="455" r="9" fill="#6f8fd6"/>
+
+  <!-- 脸 -->
+  <ellipse cx="300" cy="292" rx="106" ry="120" fill="url(#skin)"/>
+  <ellipse cx="194" cy="302" rx="18" ry="28" fill="#f2cbb6"/>
+  <ellipse cx="406" cy="302" rx="18" ry="28" fill="#f2cbb6"/>
+
+  <!-- 刘海 -->
+  <path d="M186 255 C186 166 240 116 300 116 C360 116 414 166 414 255 C396 226 370 210 346 226 C330 186 300 176 284 216 C266 180 232 185 216 226 C206 211 193 226 186 255 Z" fill="url(#hair)"/>
+  <path d="M186 248 C166 300 166 382 182 432 C198 390 202 330 207 280 Z" fill="#4a63a8"/>
+  <path d="M414 248 C434 300 434 382 418 432 C402 390 398 330 393 280 Z" fill="#4a63a8"/>
+
+  <!-- 女仆发带 -->
+  <path d="M198 194 Q300 138 402 194 L410 222 Q300 166 190 222 Z" fill="#fdfaf4" stroke="#d9d3c9" stroke-width="2"/>
+  <g fill="#fdfaf4" stroke="#d9d3c9" stroke-width="2">
+    <circle cx="222" cy="166" r="25"/>
+    <circle cx="266" cy="146" r="27"/>
+    <circle cx="312" cy="140" r="28"/>
+    <circle cx="358" cy="152" r="27"/>
+    <circle cx="396" cy="180" r="24"/>
+    <circle cx="204" cy="196" r="21"/>
+    <circle cx="414" cy="200" r="20"/>
+  </g>
+
+  <!-- 闭眼、腮红、嘴 -->
+  <path d="M238 302 Q258 317 278 302" fill="none" stroke="#3b3a4a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M322 302 Q342 317 362 302" fill="none" stroke="#3b3a4a" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="236" cy="334" rx="22" ry="10" fill="#efa7a3" opacity=".5"/>
+  <ellipse cx="364" cy="334" rx="22" ry="10" fill="#efa7a3" opacity=".5"/>
+  <path d="M292 350 Q300 357 308 350" fill="none" stroke="#b06a63" stroke-width="4" stroke-linecap="round"/>
+  <path d="M298 326 Q300 330 302 326" fill="none" stroke="#d9a18f" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 小鱼发卡 -->
+  <g transform="translate(404 232) rotate(18)">
+    <ellipse cx="0" cy="0" rx="23" ry="14" fill="#8fb0ec"/>
+    <path d="M18 0 L38 -11 L33 11 Z" fill="#8fb0ec"/>
+    <circle cx="-8" cy="-3" r="4" fill="#ffffff"/>
+    <circle cx="-8" cy="-3" r="2" fill="#2e3e68"/>
+  </g>
+
+  <!-- 点缀 -->
+  <g fill="#ffffff" opacity=".72">
+    <circle cx="126" cy="112" r="4"/>
+    <circle cx="474" cy="104" r="3"/>
+    <circle cx="500" cy="300" r="4"/>
+    <circle cx="108" cy="300" r="3"/>
+  </g>
+</svg>
